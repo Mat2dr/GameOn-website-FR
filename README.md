@@ -21,4 +21,4 @@ Etapes:<br />
 - :six: Mettre la page sur GitHub Pages.<br />
 
 Liens:<br />
-🔗 GitHub Pages du projet: https://mat2dr.github.io/GameOn-website-FR/ 🔗
+🔗 GitHub Pages du projet: SOON 🔗
