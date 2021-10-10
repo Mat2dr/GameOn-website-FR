@@ -1,9 +1,10 @@
-Project GameOn. :video_game:<br />
+### Project GameOn. :video_game:
+
 GameOn est une entreprise spécialisée dans les conférences et les concours de jeux.<br />
+A partir d'un design proposé par le designer UI sur Figma, je dois terminer le site.
 
-A partir d'un design proposé par le designer UI sur Figma, je dois terminer le site.<br />
+## Etapes:
 
-Etapes:<br />
 - :one: fermer la modale: Ajouter la fonctionnalité au bouton (x)<br />
 - :two: Implémenter entrées du formulaire:<br />
     -Utiliser du JavaScript pur pour terminer le formulaire.<br />
@@ -20,5 +21,5 @@ Etapes:<br />
     -Tester toutes les fonctionnalités des boutons et des entrées de formulaire.<br />
 - :six: Mettre la page sur GitHub Pages.<br />
 
-Liens:<br />
+## Liens:
 🔗 GitHub Pages du projet: SOON 🔗
