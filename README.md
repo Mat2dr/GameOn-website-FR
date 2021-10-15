@@ -5,13 +5,13 @@ A partir d'un design proposé par le designer UI sur Figma, je dois terminer le 
 
 ## Etapes:
 
-- :one: fermer la modale: Ajouter la fonctionnalité au bouton (x)<br />
+- :one: fermer la modale: Ajouter la fonctionnalité au bouton (x) :heavy_check_mark:<br /> 
 - :two: Implémenter entrées du formulaire:<br />
     -Utiliser du JavaScript pur pour terminer le formulaire.<br />
     -Le formulaire doit être valide quand l'utilisateur clique sur "Submit".<br />
     -Les données doivent être saisies correctement.<br />
-- :three: Ajouter validation ou messages d'erreur:<br />
-    -Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. <br />
+- :three: Ajouter validation ou messages d'erreur: :heavy_check_mark:<br />
+    -Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.<br />
     -Les messages d'erreur doivent s'afficher sous le champ de saisie associé.<br />
 - :four: Ajouter confirmation quand envoie réussi:<br />
     -Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur.<br />
