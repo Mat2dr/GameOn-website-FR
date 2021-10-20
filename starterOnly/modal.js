@@ -91,11 +91,17 @@ function validLastName() {
 }
 // email validation
 function validEmail() {
+   // Regex Pattern: /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/
+  let mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
   if (!email.value) {
     setErreur(email, "Veuillez renseigner un E-mail.");
   } else {
-    setValid(email);
-    return true;
+    if(email.value.match(mailRegex)){
+      setValid(email);
+      return true;
+    } else {
+      setErreur(email, "Veuillez renseigner un E-mail valide.");
+    }
   }
 }
 // Birthdate validation
