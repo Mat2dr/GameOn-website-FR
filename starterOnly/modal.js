@@ -39,7 +39,7 @@ reserve.addEventListener('submit', (e) => {
 
   validate();
 
-  if (validFirstName() == true && validLastName() == true && validEmail() == true && validBirthdate() == true && validQuantity() == true && validCGV() == true) {
+  if (validFirstName() === true && validLastName() === true && validEmail() === true && validBirthdate() === true && validQuantity() === true && validCGV() === true) {
     alert("Form valid");
     closeModal();
   }
@@ -123,16 +123,14 @@ function maxBirthdate() {
   }
   maxDate = year + "-" + month + "-" + day;
   maxDate = maxDate;
-  document.getElementById("birthdate").setAttribute('max', maxDate);
+  birthdate.setAttribute('max', maxDate);
 }
 function validBirthdate() {
   if (!birthdate.value) {
-    setErreur(birthdate, "Veuillez renseigner une date de naissance.");
+    setValid(birthdate, "Veuillez renseigner une date de naissance.");
   } else {
-    if (!birthdate.value) {
       setValid(birthdate);
       return true;
-    }
   }
 }
 // Quantity validation

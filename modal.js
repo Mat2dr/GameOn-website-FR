@@ -129,10 +129,8 @@ function validBirthdate() {
   if (!birthdate.value) {
     setErreur(birthdate, "Veuillez renseigner une date de naissance.");
   } else {
-    if (!birthdate.value) {
       setValid(birthdate);
       return true;
-    }
   }
 }
 // Quantity validation
