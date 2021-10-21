@@ -10,9 +10,11 @@ function editNav() {
 /*--------- DOM ELEMENTS ---------*/
 
 const modalbg = document.querySelector(".bground");
+const modalBody = document.querySelector(".modal-body");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelectorAll("#close");
+const messageValid = document.querySelector(".message-valid");
 // form elements
 const form = document.getElementById ('reserve');
 const firstName = document.getElementById ('first');
@@ -41,15 +43,9 @@ reserve.addEventListener('submit', (e) => {
   validate();
 
   if (validFirstName() == true && validLastName() == true && validEmail() == true && validBirthdate() == true && validQuantity() == true && validLocation() == true && validCGV() == true) {
-    alert("Form valid");
-    closeModal();
+    sendForm();
+    sendFormMessage();
   }
-  console.log(firstName.value);
-  console.log(lastName.value);
-  console.log(email.value);
-  console.log(birthdate.value);
-  console.log(quantity.value);
-  console.log('submit');
 })
 
 // close modal event
@@ -158,10 +154,10 @@ function validLocation() {
 // CGV validation
 function validCGV() {
   if (CGV.checked) {
-    setValid(CGV);
+    setValidCheckbox(CGV);
     return true;
   } else {
-    setErreur(CGV, "Veuillez accepter les CGV.");
+    setErreurCheckbox(CGV, "Veuillez accepter les CGV.");
   }
 }
 
@@ -199,7 +195,14 @@ function setValidCheckbox(input) {
 
   small.innerText = " "; // Reset error message
 }
-
+// Form sent
+function sendForm() {
+  modalBody.classList.add('not-active');
+}
+// Message form sent
+function sendFormMessage() {
+  messageValid.innerHTML = '<p>Thank you for submiting your registration details</p><button class="btn-close" onclick="closeModal()" class="button">Fermer</button>';
+}
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
