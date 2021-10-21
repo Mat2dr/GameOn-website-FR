@@ -20,6 +20,7 @@ const lastName = document.getElementById ('last');
 const email = document.getElementById ('email');
 const birthdate = document.getElementById ('birthdate');
 const quantity = document.getElementById ('quantity');
+const villes = document.getElementById ('location6');
 const CGV = document.getElementById ('checkbox1');
 
 let maxDate;
@@ -39,7 +40,7 @@ reserve.addEventListener('submit', (e) => {
 
   validate();
 
-  if (validFirstName() == true && validLastName() == true && validEmail() == true && validBirthdate() == true && validQuantity() == true && validCGV() == true) {
+  if (validFirstName() == true && validLastName() == true && validEmail() == true && validBirthdate() == true && validQuantity() == true && validLocation() == true && validCGV() == true) {
     alert("Form valid");
     closeModal();
   }
@@ -69,6 +70,7 @@ function validate() {
   validEmail();
   validBirthdate();
   validQuantity();
+  validLocation();
   validCGV();
 }
 
@@ -142,6 +144,17 @@ function validQuantity() {
     return true;
   }
 }
+// Radio validation
+function validLocation() {
+  var radioCheck = document.querySelector('input[name = "location"]:checked');
+
+  if(radioCheck != null){  //Test if something was checked
+    setValidCheckbox(villes);
+    return true;
+    } else {
+      setErreurCheckbox(villes, "Veuillez renseigner une localisation.");
+  }
+}
 // CGV validation
 function validCGV() {
   if (CGV.checked) {
@@ -161,6 +174,14 @@ function setErreur(input, message) {
   small.innerText = message;
   input.className = 'text-control input-error';
 }
+// SetErreur validation pour les checkboxs
+function setErreurCheckbox(input, message) {
+  // Form elements for error and validation
+  const formDataInput = input.parentElement; // Select input
+  const small = formDataInput.querySelector('small'); // Select div for error message
+
+  small.innerText = message;
+}
 // SetValid validation
 function setValid(input) {
   // Form elements for error and validation
@@ -170,10 +191,16 @@ function setValid(input) {
   small.innerText = " "; // Reset error message
   input.className = 'text-control input-valid';
 }
+// SetValid validation pour les checkboxs
+function setValidCheckbox(input) {
+  // Form elements for error and validation
+  const formDataInput = input.parentElement; // Select input
+  const small = formDataInput.querySelector('small'); // Select div for error message
+
+  small.innerText = " "; // Reset error message
+}
 
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
 }
-
-
