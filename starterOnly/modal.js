@@ -22,8 +22,13 @@ const birthdate = document.getElementById ('birthdate');
 const quantity = document.getElementById ('quantity');
 const CGV = document.getElementById ('checkbox1');
 
+let maxDate;
+
 
 /*--------- EVENTS ---------*/
+
+// birthdate max date
+document.addEventListener('DOMContentLoaded', maxBirthdate);
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -105,12 +110,29 @@ function validEmail() {
   }
 }
 // Birthdate validation
+function maxBirthdate() {
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() +1;
+  let year = date.getUTCFullYear();
+  if (day < 10) {
+    day = '0' + day;
+  } 
+  if (month < 10) {
+    month = '0' + month;
+  }
+  maxDate = year + "-" + month + "-" + day;
+  maxDate = maxDate;
+  document.getElementById("birthdate").setAttribute('max', maxDate);
+}
 function validBirthdate() {
   if (!birthdate.value) {
     setErreur(birthdate, "Veuillez renseigner une date de naissance.");
   } else {
-    setValid(birthdate);
-    return true;
+    if (!birthdate.value) {
+      setValid(birthdate);
+      return true;
+    }
   }
 }
 // Quantity validation
