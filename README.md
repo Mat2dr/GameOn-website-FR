@@ -22,4 +22,4 @@ A partir d'un design proposé par le designer UI sur Figma, je dois terminer le 
 - :six: Mettre la page sur GitHub Pages.<br />
 
 ## Liens:
-🔗 GitHub Pages du projet: SOON 🔗
+🔗 GitHub Pages du projet: https://mat2dr.github.io/GameOn-website-FR/ 🔗
