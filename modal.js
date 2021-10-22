@@ -201,7 +201,7 @@ function sendForm() {
 }
 // Message form sent
 function sendFormMessage() {
-  messageValid.innerHTML = '<p>Thank you for submiting your registration details</p><button class="btn-close" onclick="closeModal()" class="button">Fermer</button>';
+  messageValid.innerHTML = '<p>Merci d avoir soumis vos informations d inscription</p><button class="btn-close" onclick="closeModal()" class="button">Fermer</button>';
 }
 // close modal form
 function closeModal() {
