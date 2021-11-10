@@ -142,7 +142,7 @@ function validQuantity() {
 }
 // Radio validation
 function validLocation() {
-  var radioCheck = document.querySelector('input[name = "location"]:checked');
+  let radioCheck = document.querySelector('input[name = "location"]:checked');
 
   if(radioCheck != null){  //Test if something was checked
     setValidCheckbox(villes);
