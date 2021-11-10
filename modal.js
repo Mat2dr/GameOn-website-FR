@@ -74,8 +74,13 @@ function validate() {
 function validFirstName() {
   if (!firstName.value) {
     setErreur(firstName, "Veuillez renseigner un prénom.");
+    return false;
   } else if (firstName.value.length <= 1){
     setErreur(firstName, "Veuillez entrer 2 caractères ou plus pour le champ du prenom.");
+    return false;
+  } else if (firstName.value.match(/^ *$/)) {
+    setErreur(firstName, "Veuillez entrer un prénom valide.");
+    return false;
   } else {
     setValid(firstName);
     return true;
@@ -85,8 +90,13 @@ function validFirstName() {
 function validLastName() {
   if (!lastName.value) {
     setErreur(lastName, "Veuillez renseigner un nom.");
+    return false;
   } else if (lastName.value.length <= 1){
     setErreur(lastName, "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
+    return false;
+  } else if (lastName.value.match(/^ *$/)) {
+    setErreur(lastName, "Veuillez entrer un nom valide.");
+    return false;
   } else {
     setValid(lastName);
     return true;
@@ -98,12 +108,14 @@ function validEmail() {
   let mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
   if (!email.value) {
     setErreur(email, "Veuillez renseigner un E-mail.");
+    return false;
   } else {
     if(email.value.match(mailRegex)){
       setValid(email);
       return true;
     } else {
       setErreur(email, "Veuillez renseigner un E-mail valide.");
+      return false;
     }
   }
 }
@@ -126,6 +138,7 @@ function maxBirthdate() {
 function validBirthdate() {
   if (!birthdate.value) {
     setErreur(birthdate, "Veuillez renseigner une date de naissance.");
+    return false;
   } else {
       setValid(birthdate);
       return true;
@@ -135,6 +148,7 @@ function validBirthdate() {
 function validQuantity() {
   if (!quantity.value) {
     setErreur(quantity, "Veuillez renseigner a combien de tournois GameOn avez-vous déjà participé.");
+    return false;
   } else {
     setValid(quantity);
     return true;
@@ -149,6 +163,7 @@ function validLocation() {
     return true;
     } else {
       setErreurCheckbox(villes, "Veuillez renseigner une localisation.");
+      return false;
   }
 }
 // CGV validation
@@ -158,6 +173,7 @@ function validCGV() {
     return true;
   } else {
     setErreurCheckbox(CGV, "Veuillez accepter les CGV.");
+    return false;
   }
 }
 
