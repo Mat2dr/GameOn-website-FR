@@ -217,9 +217,15 @@ function sendForm() {
 }
 // Message form sent
 function sendFormMessage() {
-  messageValid.innerHTML = "<p>Merci d'avoir soumis vos informations d'inscription</p>" + '<button class="btn-close" onclick="closeModal()" class="button">Fermer</button>';
+  messageValid.innerHTML = "<p>Merci d'avoir soumis vos informations d'inscription</p>" + '<button class="btn-close" onclick="closeModalReload()" class="button">Fermer</button>';
+  form.reset();
 }
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
+}
+
+function closeModalReload() {
+  modalbg.style.display = "none";
+  window.location.reload();
 }
